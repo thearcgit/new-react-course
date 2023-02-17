@@ -1,5 +1,4 @@
 import Expenses from "./components/expenses/Expenses";
-import ExpenseItem from "./components/expenses/ExpenseItem";
 
 
 const App = () => {
