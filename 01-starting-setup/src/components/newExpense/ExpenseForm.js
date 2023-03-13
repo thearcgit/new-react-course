@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
+    console.log('props',props)
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
@@ -37,6 +38,7 @@ const ExpenseForm = (props) => {
         setEnteredTitle('')
         setEnteredAmount('')
         setEnteredDate('')
+        props.stopShowingForm()
     }
     // useEffect(() => {
     //     console.log(ueserInput)
@@ -58,8 +60,9 @@ const ExpenseForm = (props) => {
                     <input type="date" value={enteredDate}  min='2023-02-01' max='2024-12-31' onChange={dateChangeHandler} />
                 </div>
 
-            </div>
+            </div>            
             <div className="new-expense__actions">
+                <button type='button' onClick={props.stopShowingForm}>Cancel</button>
                 <button type='submit'>Add Expense</button>
 
             </div>
